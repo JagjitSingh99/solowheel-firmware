@@ -23,9 +23,10 @@ jobs:
         arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Wall -O2 \
         Core/Src/*.c -o build/solowheel.elf -ICore/Inc
         arm-none-eabi-objcopy -O binary build/solowheel.elf build/solowheel.bin
-
-    - name: Upload .bin as artifact
-      uses: actions/upload-artifact@v3.1.2
-      with:
+        
+        - name: Upload .bin file
+        uses: actions/upload-artifact@v3.1.2
+        
+        with:
         name: firmware-bin
         path: build/solowheel.bin
